@@ -7,32 +7,26 @@ export const Plans: React.FC = () => {
   return (
     <section id="planos" className="py-28 bg-white text-zinc-900 relative overflow-hidden">
       
-      {/* Atmosfera e Iluminação Surreal de Fundo (Mantendo bg-white puro) */}
       <div className="absolute inset-0 pointer-events-none overflow-hidden">
-        {/* Glows radiais refinados nas extremidades */}
         <div className="absolute top-1/4 -left-32 w-[600px] h-[600px] bg-emerald-500/10 rounded-full blur-[140px]" />
         <div className="absolute bottom-1/4 -right-32 w-[600px] h-[600px] bg-emerald-600/10 rounded-full blur-[140px]" />
 
-        {/* Grid técnico sutil de precisão */}
         <div className="absolute inset-0 opacity-[0.4]" style={{
           backgroundImage: `linear-gradient(to right, #f1f5f9 1px, transparent 1px), linear-gradient(to bottom, #f1f5f9 1px, transparent 1px)`,
           backgroundSize: '40px 40px'
         }} />
 
-        {/* Linhas curvas fluidas de alta performance */}
         <svg className="absolute inset-0 w-full h-full text-emerald-500/10" fill="none" stroke="currentColor" strokeWidth="1.5" viewBox="0 0 1440 800" preserveAspectRatio="none">
           <path d="M-100,150 C400,350 300,650 700,450 C1100,250 1300,650 1600,300" />
           <path d="M-100,500 C300,700 800,200 1200,600 C1400,700 1500,400 1700,450" opacity="0.5" />
         </svg>
 
-        {/* Molduras de Canto Técnicas */}
         <div className="absolute top-8 left-8 w-12 h-12 border-t-2 border-l-2 border-emerald-500/30 rounded-tl-lg hidden lg:block" />
         <div className="absolute top-8 right-8 w-12 h-12 border-t-2 border-r-2 border-emerald-500/30 rounded-tr-lg hidden lg:block" />
       </div>
 
       <div className="max-w-7xl mx-auto px-6 relative z-10">
         
-        {/* Cabeçalho Comercial de Autoridade */}
         <div className="text-center max-w-3xl mx-auto mb-20">
           <span className="inline-flex items-center gap-2 text-xs font-semibold tracking-widest uppercase text-emerald-700 bg-emerald-500/10 border border-emerald-500/20 px-4 py-2 rounded-full mb-4 shadow-inner">
             <Zap className="w-3.5 h-3.5 text-emerald-600" /> Investimento Estratégico
@@ -45,7 +39,6 @@ export const Plans: React.FC = () => {
           </p>
         </div>
 
-        {/* Grade de Planos */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 items-stretch">
           {plans.map((plan) => {
             const link = paymentLinks[plan.paymentLinkKey];
@@ -60,10 +53,8 @@ export const Plans: React.FC = () => {
                     : 'border border-zinc-200/90 hover:border-emerald-500/50'
                 }`}
               >
-                {/* Linha de luz superior no hover para os cards */}
                 <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-transparent via-emerald-500 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-t-3xl" />
 
-                {/* Badge de Destaque */}
                 {plan.badge && (
                   <span className="absolute -top-3.5 left-1/2 -translate-x-1/2 bg-emerald-500 text-zinc-950 text-xs font-black px-4 py-1.5 rounded-full uppercase tracking-wider shadow-lg flex items-center gap-1.5">
                     <Sparkles className="w-3 h-3 fill-zinc-950" /> {plan.badge}
@@ -75,7 +66,6 @@ export const Plans: React.FC = () => {
                     {plan.name}
                   </h3>
                   
-                  {/* Bloco de Preço */}
                   <div className="my-6 pb-6 border-b border-zinc-200/80">
                     <div className="flex items-baseline gap-1">
                       <span className="text-xs font-bold text-zinc-500">R$</span>
@@ -89,7 +79,6 @@ export const Plans: React.FC = () => {
                     )}
                   </div>
 
-                  {/* Lista de Benefícios */}
                   <ul className="space-y-3.5 mb-8">
                     {plan.features.map((feat, idx) => (
                       <li key={idx} className="flex items-start gap-3 text-sm text-zinc-600 leading-relaxed">
@@ -102,7 +91,6 @@ export const Plans: React.FC = () => {
                   </ul>
                 </div>
 
-                {/* Botão de Contratação */}
                 <a 
                   href={link} 
                   target="_blank" 
@@ -121,7 +109,6 @@ export const Plans: React.FC = () => {
           })}
         </div>
 
-        {/* Rodapé de Segurança */}
         <div className="mt-20 flex items-center justify-center gap-2.5 text-xs font-medium text-zinc-500 bg-zinc-50/80 border border-zinc-200/60 max-w-md mx-auto py-3 px-6 rounded-full shadow-inner">
           <ShieldCheck className="w-4 h-4 text-emerald-600 flex-shrink-0" />
           <span>Pagamento 100% seguro via Mercado Pago • PIX e Cartões</span>

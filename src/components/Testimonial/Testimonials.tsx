@@ -1,10 +1,11 @@
 import React, { useState, useEffect } from 'react';
 import { Sparkles, Quote, ChevronLeft, ChevronRight, Star, Zap } from 'lucide-react';
-import tatianeFoto from '../../assets/img/tatiane-santos.jpeg';
-import vanessaFoto from '../../assets/img/vanessa-nichetti.jpeg';
-import lilianeFoto from '../../assets/img/liliane-bamberg.jpeg';
-import igorFoto from '../../assets/img/igor-leite.png';
-import larissaFoto from '../../assets/img/larissa-dorea.jpeg';
+import tatianeFoto from '../../assets/img/clientes/tatiane-santos.jpeg';
+import vanessaFoto from '../../assets/img/clientes/vanessa-nichetti.jpeg';
+import lilianeFoto from '../../assets/img/clientes/liliane-bamberg.jpeg';
+import igorFoto from '../../assets/img/clientes/igor-leite.png';
+import larissaFoto from '../../assets/img/clientes/larissa-dorea.jpeg';
+import cindeFoto from '../../assets/img/clientes/cinde-moane.PNG';
 
 const testimonialsData = [
   {
@@ -46,6 +47,14 @@ const testimonialsData = [
     avatar: larissaFoto,
     rating: 5,
     objectPosition: "object-top"
+  },
+  {
+    name: "Cinde Moane",
+    role: "Consultoria • 37 anos",
+    comment: "Entrar na consultoria foi a melhor escolha que poderia fazer. O diferencial é o acompanhamento humano: tem cuidado, atenção e cobrança na medida certa. Não é só treino, é um suporte que me faz mais forte, confiante e com o corpo evoluindo. Gratidão!",
+    avatar: cindeFoto,
+    rating: 5,
+    objectPosition: "object-center" 
   }
 ];
 

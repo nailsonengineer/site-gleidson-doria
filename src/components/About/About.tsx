@@ -2,7 +2,7 @@ import React from 'react';
 import { trainer } from '../../data/trainer';
 import { CheckCircle2, Award, BookOpen, ShieldCheck, TrendingUp } from 'lucide-react';
 
-import gleidsonLivroImg from '../../assets/img/IMG_5697.PNG';
+import gleidsonLivroImg from '../../assets/img/perfil/IMG_5697.PNG';
 
 export const About: React.FC = () => {
   return (

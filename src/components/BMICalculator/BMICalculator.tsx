@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
-import { Calculator, Activity, HeartPulse, Zap, ArrowRight, ShieldCheck } from 'lucide-react';
+import { Calculator, Activity, HeartPulse, Zap, Droplets, ShieldCheck } from 'lucide-react';
 
 export const BMICalculator: React.FC = () => {
-  const [activeTab, setActiveTab] = useState<'bmi' | 'heartRate'>('bmi');
+  const [activeTab, setActiveTab] = useState<'bmi' | 'heartRate' | 'water'>('bmi');
 
   // Estados para IMC
   const [weight, setWeight] = useState('');
@@ -12,6 +12,10 @@ export const BMICalculator: React.FC = () => {
   // Estados para Frequência Cardíaca
   const [age, setAge] = useState('');
   const [hrResult, setHrResult] = useState<{ maxHr: number; fatBurnMin: number; fatBurnMax: number; cardioMin: number; cardioMax: number } | null>(null);
+
+  // Estados para Hidratação
+  const [waterWeight, setWaterWeight] = useState('');
+  const [waterResult, setWaterResult] = useState<{ totalMl: number; totalLiters: string } | null>(null);
 
   const calculateBMI = (e: React.FormEvent) => {
     e.preventDefault();
@@ -50,8 +54,20 @@ export const BMICalculator: React.FC = () => {
     setHrResult({ maxHr, fatBurnMin, fatBurnMax, cardioMin, cardioMax });
   };
 
+  const calculateWater = (e: React.FormEvent) => {
+    e.preventDefault();
+    const w = parseFloat(waterWeight);
+    if (!w || w <= 0) return;
+
+    // Fórmula: Peso x 35 ml
+    const totalMl = w * 35;
+    const totalLiters = (totalMl / 1000).toFixed(2);
+
+    setWaterResult({ totalMl, totalLiters });
+  };
+
   return (
-    <section className="py-28 bg-zinc-900 text-white border-y border-zinc-800/80 relative overflow-hidden">
+    <section id="calculadoras" className="py-28 bg-zinc-900 text-white border-y border-zinc-800/80 relative overflow-hidden">
       
       {/* Elementos de Atmosfera e Iluminação Surreal de Fundo */}
       <div className="absolute inset-0 pointer-events-none overflow-hidden">
@@ -79,7 +95,7 @@ export const BMICalculator: React.FC = () => {
             Calculadoras <span className="text-emerald-400 underline decoration-emerald-500/30 underline-offset-8">Estratégicas</span>
           </h2>
           <p className="text-zinc-400 text-base">
-            Monitore suas métricas corporais e zonas de treinamento para otimizar seus resultados.
+            Monitore suas métricas corporais, zonas de treinamento e hidratação diária para otimizar seus resultados.
           </p>
         </div>
 
@@ -87,28 +103,39 @@ export const BMICalculator: React.FC = () => {
         <div className="bg-zinc-950/90 backdrop-blur-xl border border-zinc-800/90 p-8 sm:p-10 rounded-3xl shadow-2xl relative overflow-hidden">
           
           {/* Seletor de Abas (Tabs) */}
-          <div className="grid grid-cols-2 gap-3 p-1.5 bg-zinc-900/90 border border-zinc-800 rounded-2xl mb-8">
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 p-1.5 bg-zinc-900/90 border border-zinc-800 rounded-2xl mb-8">
             <button
               onClick={() => setActiveTab('bmi')}
-              className={`flex items-center justify-center gap-2.5 py-3.5 px-4 rounded-xl text-sm font-bold transition-all duration-300 ${
+              className={`flex items-center justify-center gap-2 py-3.5 px-3 rounded-xl text-xs sm:text-sm font-bold transition-all duration-300 cursor-pointer ${
                 activeTab === 'bmi'
                   ? 'bg-emerald-500 text-zinc-950 shadow-lg shadow-emerald-500/20'
                   : 'text-zinc-400 hover:text-white hover:bg-zinc-800/50'
               }`}
             >
-              <Calculator className="w-4 h-4" />
-              <span>Calculadora de IMC</span>
+              <Calculator className="w-4 h-4 flex-shrink-0" />
+              <span>IMC</span>
             </button>
             <button
               onClick={() => setActiveTab('heartRate')}
-              className={`flex items-center justify-center gap-2.5 py-3.5 px-4 rounded-xl text-sm font-bold transition-all duration-300 ${
+              className={`flex items-center justify-center gap-2 py-3.5 px-3 rounded-xl text-xs sm:text-sm font-bold transition-all duration-300 cursor-pointer ${
                 activeTab === 'heartRate'
                   ? 'bg-emerald-500 text-zinc-950 shadow-lg shadow-emerald-500/20'
                   : 'text-zinc-400 hover:text-white hover:bg-zinc-800/50'
               }`}
             >
-              <HeartPulse className="w-4 h-4" />
-              <span>Frequência Cardíaca</span>
+              <HeartPulse className="w-4 h-4 flex-shrink-0" />
+              <span>Freq. Cardíaca</span>
+            </button>
+            <button
+              onClick={() => setActiveTab('water')}
+              className={`flex items-center justify-center gap-2 py-3.5 px-3 rounded-xl text-xs sm:text-sm font-bold transition-all duration-300 cursor-pointer ${
+                activeTab === 'water'
+                  ? 'bg-emerald-500 text-zinc-950 shadow-lg shadow-emerald-500/20'
+                  : 'text-zinc-400 hover:text-white hover:bg-zinc-800/50'
+              }`}
+            >
+              <Droplets className="w-4 h-4 flex-shrink-0" />
+              <span>Água Diária</span>
             </button>
           </div>
 
@@ -130,7 +157,7 @@ export const BMICalculator: React.FC = () => {
                     />
                   </div>
                   <div>
-                    <label className="block text-xs font-bold uppercase tracking-wider text-zinc-300 mb-2">Altura (m ou cm - Ex: 1.75 ou 175)</label>
+                    <label className="block text-xs font-bold uppercase tracking-wider text-zinc-300 mb-2">Altura (Ex: 1.75 ou 175)</label>
                     <input 
                       type="number" 
                       step="0.01"
@@ -223,10 +250,51 @@ export const BMICalculator: React.FC = () => {
             </div>
           )}
 
+          {/* CONTEÚDO DA ABA: HIDRATAÇÃO (ÁGUA DIÁRIA) */}
+          {activeTab === 'water' && (
+            <div className="animate-fadeIn">
+              <form onSubmit={calculateWater} className="space-y-6">
+                <div>
+                  <label className="block text-xs font-bold uppercase tracking-wider text-zinc-300 mb-2">Peso Atual (kg)</label>
+                  <input 
+                    type="number" 
+                    step="0.1"
+                    placeholder="Ex: 75" 
+                    value={waterWeight}
+                    onChange={(e) => setWaterWeight(e.target.value)}
+                    className="w-full bg-zinc-900/90 border border-zinc-800 rounded-xl px-4 py-3.5 text-white placeholder-zinc-600 focus:outline-none focus:border-emerald-500 focus:ring-1 focus:ring-emerald-500 transition-all"
+                    required
+                  />
+                  <p className="text-[11px] text-zinc-500 mt-2">Cálculo baseado na recomendação padrão de 35 ml de água por quilo corporal.</p>
+                </div>
+
+                <button 
+                  type="submit" 
+                  className="w-full bg-emerald-500 hover:bg-emerald-400 text-zinc-950 font-extrabold py-4 rounded-xl transition-all duration-300 flex items-center justify-center gap-2 shadow-xl shadow-emerald-500/10 group cursor-pointer"
+                >
+                  <Droplets className="w-5 h-5 transition-transform group-hover:scale-110" /> 
+                  <span>Calcular Consumo de Água</span>
+                </button>
+              </form>
+
+              {waterResult && (
+                <div className="mt-8 bg-zinc-900/90 border border-emerald-500/30 p-6 rounded-2xl text-center relative overflow-hidden shadow-inner">
+                  <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-transparent via-emerald-500 to-transparent" />
+                  <p className="text-xs uppercase tracking-widest font-bold text-zinc-400 mb-1">Consumo Diário Recomendado</p>
+                  <p className="text-5xl font-black text-emerald-400 my-2 tracking-tight">{waterResult.totalLiters} <span className="text-2xl font-bold text-zinc-300">litros</span></p>
+                  <div className="inline-flex items-center gap-2 bg-emerald-500/10 border border-emerald-500/20 px-4 py-1.5 rounded-full mt-2">
+                    <span className="text-xs text-zinc-400">Aproximadamente:</span>
+                    <span className="text-sm font-bold text-white">{waterResult.totalMl.toLocaleString('pt-BR')} ml por dia</span>
+                  </div>
+                </div>
+              )}
+            </div>
+          )}
+
           {/* Rodapé de Aviso */}
-          <div className="mt-8 pt-6 border-t border-zinc-800/80 flex items-center justify-center gap-2 text-xs text-zinc-500">
+          <div className="mt-8 pt-6 border-t border-zinc-800/80 flex items-center justify-center gap-2 text-xs text-zinc-500 text-center">
             <ShieldCheck className="w-4 h-4 text-emerald-400 flex-shrink-0" />
-            <span>* Ferramentas orientativas baseadas em fórmulas padrão. Não substituem avaliação clínica ou profissional.</span>
+            <span>Ferramentas orientativas baseadas em fórmulas padrão. Não substituem avaliação clínica ou profissional.</span>
           </div>
 
         </div>

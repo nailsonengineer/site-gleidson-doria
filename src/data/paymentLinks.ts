@@ -1,6 +1,6 @@
 export const paymentLinks = {
-  mensal: "[LINK_PAGAMENTO_MENSAL]",
-  trimestral: "[LINK_PAGAMENTO_TRIMESTRAL]",
-  semestral: "[LINK_PAGAMENTO_SEMESTRAL]",
-  anual: "[LINK_PAGAMENTO_ANUAL]"
+  mensal: "https://mpago.la/2Xy6Vqk",
+  trimestral: "https://mpago.li/2ca7RAk",
+  semestral: "https://mpago.li/1VgxVWc",
+  anual: "https://mpago.li/1tmmKgY",
 };

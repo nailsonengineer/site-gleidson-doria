@@ -1,6 +1,6 @@
 import type { TrainerConfig } from '../types';
 
-import elegante1 from '../assets/img/elegante1.png';
+import fotoFundo from '../assets/img/perfil/elegante1.png';;
 
 export const trainer: TrainerConfig = {
   name: "Gleidson Doria",
@@ -14,6 +14,6 @@ export const trainer: TrainerConfig = {
   cref: "Especialista em Reabilitação",
   bio: "Sou Gleidson Doria, Coach, Palestrante, Escritor e Professor Especialista em Reabilitação de Lesões. Minha missão é proporcionar consultoria on-line e treinamento de alto nível, unindo ciência, prática e resultados consistentes.",
   heroImages: [
-    elegante1
+    fotoFundo
   ]
 };

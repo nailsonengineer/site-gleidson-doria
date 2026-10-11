@@ -79,7 +79,6 @@ export const Services: React.FC = () => {
           </p>
         </div>
 
-        {/* Grade de Serviços Premium */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {services.map((service, idx) => {
             const Icon = service.icon;
@@ -88,11 +87,9 @@ export const Services: React.FC = () => {
                 key={idx} 
                 className="bg-zinc-50/90 backdrop-blur-md border border-zinc-200/90 p-8 rounded-2xl transition-all duration-500 hover:-translate-y-2 hover:shadow-2xl hover:shadow-emerald-500/10 hover:border-emerald-500/50 flex flex-col justify-between group relative overflow-hidden"
               >
-                {/* Linha decorativa superior no hover */}
                 <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-transparent via-emerald-500 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
 
                 <div>
-                  {/* Cabeçalho do Card: Ícone e Numeração Tecnológica */}
                   <div className="flex items-center justify-between mb-6">
                     <div className="w-14 h-14 rounded-xl bg-emerald-500/10 flex items-center justify-center text-emerald-600 group-hover:bg-emerald-500 group-hover:text-zinc-950 transition-all duration-300 shadow-sm">
                       <Icon className="w-7 h-7" />
@@ -110,7 +107,6 @@ export const Services: React.FC = () => {
                   </p>
                 </div>
                 
-                {/* Botão de Ação Direta */}
                 <div className="pt-4 border-t border-zinc-200/80">
                   <a 
                     href={whatsappLink} 
@@ -131,3 +127,4 @@ export const Services: React.FC = () => {
     </section>
   );
 };
+

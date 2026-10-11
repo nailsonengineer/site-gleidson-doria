@@ -19,7 +19,7 @@ export const plans: Plan[] = [
     id: 'trimestral',
     name: 'TRIMESTRAL',
     durationMonths: 3,
-    monthlyPrice: 133, // 400 / 3 arredondado para exibição limpa
+    monthlyPrice: 133,
     totalPrice: 400,
     features: [
       'Treino personalizado',
@@ -34,8 +34,8 @@ export const plans: Plan[] = [
     id: 'semestral',
     name: 'SEMESTRAL',
     durationMonths: 6,
-    monthlyPrice: 100,
-    totalPrice: 600,
+    monthlyPrice: 108,
+    totalPrice: 650, 
     badge: 'Mais Popular',
     features: [
       'Treino personalizado avançado',
@@ -50,7 +50,7 @@ export const plans: Plan[] = [
     id: 'anual',
     name: 'ANUAL',
     durationMonths: 12,
-    monthlyPrice: 92, // 1100 / 12 arredondado para exibição limpa
+    monthlyPrice: 92,
     totalPrice: 1100,
     badge: 'Melhor Custo-Benefício',
     features: [

@@ -1,9 +1,10 @@
 import React from 'react';
 import { Header } from '../../components/Header/Header';
 import { Hero } from '../../components/Hero/Hero';
+import { PhotoGallery } from '../../components/PhotoGallery/PhotoGallery'; 
 import { Services } from '../../components/Services/Services';
 import { About } from '../../components/About/About';
-import { VideoGrid } from '../../components/VideoGrid/VideoGrid'; // Novo componente de mosaico
+import { VideoGrid } from '../../components/VideoGrid/VideoGrid';
 import { Results } from '../../components/Testimonial/Testimonials';
 import { Methodology } from '../../components/Methodology/Methodology';
 import { BMICalculator } from '../../components/BMICalculator/BMICalculator';
@@ -13,56 +14,59 @@ import { Ebook } from '../../components/Ebook/Ebook';
 import { Contact } from '../../components/Contact/Contact';
 import { FloatingWhatsApp } from '../../components/FloatingWhatsApp/FloatingWhatsApp';
 import { Footer } from '../../components/Footer/Footer';
-import { SectionReveal } from '../../components/ui/ScrollReveal';
 
 export const Home: React.FC = () => {
   return (
     <div className="min-h-screen bg-zinc-950 font-sans selection:bg-emerald-500 selection:text-zinc-950">
       <Header />
       
-      <SectionReveal id="inicio">
+      <div id="inicio">
         <Hero />
-      </SectionReveal>
+      </div>
 
-      <SectionReveal id="servicos">
+      <div id="galeria">
+        <PhotoGallery />
+      </div>
+
+      <div id="servicos">
         <Services />
-      </SectionReveal>
+      </div>
 
-      <SectionReveal id="sobre">
+      <div id="sobre">
         <About />
-      </SectionReveal>
+      </div>
 
-      <SectionReveal id="videos">
+      <div id="videos">
         <VideoGrid />
-      </SectionReveal>
+      </div>
 
-      <SectionReveal id="resultados">
+      <div id="resultados">
         <Results />
-      </SectionReveal>
+      </div>
 
-      <SectionReveal>
+      <div>
         <Methodology />
-      </SectionReveal>
+      </div>
 
-      <SectionReveal>
+      <div>
         <BMICalculator />
-      </SectionReveal>
+      </div>
 
-      <SectionReveal id="planos">
+      <div id="planos">
         <Plans />
-      </SectionReveal>
+      </div>
 
-      <SectionReveal>
+      <div>
         <FAQ />
-      </SectionReveal>
+      </div>
 
-      <SectionReveal id="blog">
+      <div id="blog">
         <Ebook />
-      </SectionReveal>
+      </div>
 
-      <SectionReveal id="contato">
+      <div id="contato">
         <Contact />
-      </SectionReveal>
+      </div>
 
       <FloatingWhatsApp />
       
