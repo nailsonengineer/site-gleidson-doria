@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Send, MessageCircle, Phone, MapPin, CheckCircle2 } from 'lucide-react';
+import { MessageCircle, Phone, MapPin, CheckCircle2 } from 'lucide-react';
 import { trainer } from '../../data/trainer';
 
 export const Contact: React.FC = () => {

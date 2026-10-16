@@ -7,4 +7,8 @@ export default defineConfig({
     react(),
     tailwindcss(),
   ],
+  server: {
+    host: true, // Libera o acesso para a sua rede local
+    port: 5173, // (Opcional) Mantém ou define a porta padrão
+  },
 })

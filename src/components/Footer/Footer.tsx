@@ -1,8 +1,11 @@
 import React from 'react';
-import { Dumbbell, Mail, Sparkles, ArrowUpRight } from 'lucide-react';
+import { Dumbbell, Mail, ArrowUpRight } from 'lucide-react';
 import { trainer } from '../../data/trainer';
+import { useModal } from '../../context/ModalContext';
 
 export const Footer: React.FC = () => {
+  const { openModal } = useModal();
+
   return (
     <footer className="bg-zinc-950 text-zinc-400 pt-20 pb-12 border-t border-zinc-900/80 relative overflow-hidden">
       
@@ -16,7 +19,7 @@ export const Footer: React.FC = () => {
         
         {/* Coluna da Marca / Bio */}
         <div className="md:col-span-2">
-          <a href="#inicio" className="inline-flex items-center gap-2.5 text-white font-extrabold text-xl tracking-tight mb-4 group">
+          <a href="#inicio" onClick={(e) => { e.preventDefault(); window.scrollTo(0, 0); }} className="inline-flex items-center gap-2.5 text-white font-extrabold text-xl tracking-tight mb-4 group cursor-pointer">
             <div className="w-10 h-10 rounded-xl bg-emerald-500/10 border border-emerald-500/30 flex items-center justify-center text-emerald-400 group-hover:bg-emerald-500 group-hover:text-zinc-950 transition-all duration-300">
               <Dumbbell className="w-5 h-5" />
             </div>
@@ -44,26 +47,16 @@ export const Footer: React.FC = () => {
             <span className="w-1.5 h-1.5 rounded-full bg-emerald-500" /> Navegação
           </h4>
           <ul className="space-y-3 text-sm font-medium">
-            <li>
-              <a href="#inicio" className="hover:text-emerald-400 transition-colors flex items-center gap-1 group">
-                <span className="text-zinc-600 group-hover:text-emerald-500 transition-colors">/</span> Início
-              </a>
-            </li>
-            <li>
-              <a href="#servicos" className="hover:text-emerald-400 transition-colors flex items-center gap-1 group">
-                <span className="text-zinc-600 group-hover:text-emerald-500 transition-colors">/</span> Serviços
-              </a>
-            </li>
-            <li>
-              <a href="#sobre" className="hover:text-emerald-400 transition-colors flex items-center gap-1 group">
-                <span className="text-zinc-600 group-hover:text-emerald-500 transition-colors">/</span> Quem Sou
-              </a>
-            </li>
-            <li>
-              <a href="#planos" className="hover:text-emerald-400 transition-colors flex items-center gap-1 group">
-                <span className="text-zinc-600 group-hover:text-emerald-500 transition-colors">/</span> Planos
-              </a>
-            </li>
+            {['inicio', 'servicos', 'sobre', 'planos'].map(item => (
+              <li key={item}>
+                <button 
+                  onClick={() => document.getElementById(item)?.scrollIntoView({ behavior: 'smooth' })}
+                  className="hover:text-emerald-400 transition-colors flex items-center gap-1 group cursor-pointer bg-transparent border-none p-0"
+                >
+                  <span className="text-zinc-600 group-hover:text-emerald-500 transition-colors">/</span> {item.charAt(0).toUpperCase() + item.slice(1)}
+                </button>
+              </li>
+            ))}
           </ul>
         </div>
 
@@ -74,14 +67,20 @@ export const Footer: React.FC = () => {
           </h4>
           <ul className="space-y-3 text-sm font-medium">
             <li>
-              <a href="#politica" className="hover:text-emerald-400 transition-colors flex items-center gap-1 group">
+              <button 
+                onClick={() => openModal('policy')}
+                className="hover:text-emerald-400 transition-colors flex items-center gap-1 group cursor-pointer bg-transparent border-none p-0"
+              >
                 <span className="text-zinc-600 group-hover:text-emerald-500 transition-colors">/</span> Política de Privacidade
-              </a>
+              </button>
             </li>
             <li>
-              <a href="#termos" className="hover:text-emerald-400 transition-colors flex items-center gap-1 group">
+              <button 
+                onClick={() => openModal('terms')}
+                className="hover:text-emerald-400 transition-colors flex items-center gap-1 group cursor-pointer bg-transparent border-none p-0"
+              >
                 <span className="text-zinc-600 group-hover:text-emerald-500 transition-colors">/</span> Termos de Uso
-              </a>
+              </button>
             </li>
           </ul>
         </div>
@@ -94,10 +93,9 @@ export const Footer: React.FC = () => {
         </p>
 
         <p className="text-zinc-400 flex items-center gap-1.5 bg-zinc-900/50 border border-zinc-800/60 px-3 py-1.5 rounded-full shadow-inner">
-          <Sparkles className="w-3.5 h-3.5 text-emerald-400" />
           <span>Desenvolvido por</span>
           <a 
-            href="https://github.com/ONancha" 
+            href="https://www.nailsonrocha.com.br/" 
             target="_blank" 
             rel="noopener noreferrer" 
             className="text-emerald-400 font-bold hover:underline inline-flex items-center gap-0.5"
@@ -110,6 +108,7 @@ export const Footer: React.FC = () => {
           CREF: <span className="text-zinc-400 font-bold">{trainer.cref}</span>
         </p>
       </div>
+
     </footer>
   );
 };

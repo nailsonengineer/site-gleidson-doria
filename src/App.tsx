@@ -1,85 +1,47 @@
 import { useState, useEffect } from 'react';
-
 import { Home } from './pages/Home/Home';
-
-import { ClientLogin } from './pages/ClientLogin/ClientLogin';
-
-import { ClientDashboard } from './pages/ClientDashboard/ClientDashboard';
-
-import { AdminLogin } from './pages/AdminLogin/AdminLogin';
-
-import { AdminDashboard } from './pages/AdminDashboard/AdminDashboard';
-
-import { IntroVideo } from './components/IntroVideo';
-
+import { LandingProfile } from './components/LandingProfile/LandingProfile';
+import { ModalProvider } from './context/ModalContext';
 
 export function App() {
+  const [inSite, setInSite] = useState<boolean>(() => {
+    return sessionStorage.getItem('gleidson_entered_site') === 'true';
+  });
 
-    const [currentRoute, setCurrentRoute] = useState<string>(window.location.hash || '#inicio');
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [inSite]);
 
-    // Verifica se já assistiu ao vídeo nesta sessão do navegador
+  const handleEnterSite = () => {
+    sessionStorage.setItem('gleidson_entered_site', 'true');
+    setInSite(true);
+  };
 
-    const [showIntro, setShowIntro] = useState<boolean>(() => {
+  const handleOpenAbout = () => {
+    sessionStorage.setItem('gleidson_entered_site', 'true');
+    setInSite(true);
+    setTimeout(() => {
+      const aboutElement = document.getElementById('sobre');
+      if (aboutElement) {
+        aboutElement.scrollIntoView({ behavior: 'smooth' });
+      }
+    }, 150);
+  };
 
-        return !sessionStorage.getItem('gleidson_intro_watched');
-
-    });
-
-
-    useEffect(() => {
-
-        const handleHashChange = () => {
-
-            setCurrentRoute(window.location.hash || '#inicio');
-
-        };
-
-
-        window.addEventListener('hashchange', handleHashChange);
-
-        return () => window.removeEventListener('hashchange', handleHashChange);
-
-    }, []);
-
-
-    const handleCompleteIntro = () => {
-
-        sessionStorage.setItem('gleidson_intro_watched', 'true');
-
-        setShowIntro(false);
-
-    };
-
-
-    if (currentRoute === '#cliente/login') return <ClientLogin />;
-
-    if (currentRoute === '#cliente/dashboard') return <ClientDashboard />;
-
-    if (currentRoute === '#admin/login') return <AdminLogin />;
-
-    if (currentRoute === '#admin/dashboard') return <AdminDashboard />;
-
-
-
-    if (showIntro && (currentRoute === '#inicio' || currentRoute === '')) {
-
-        return (
-
-            <IntroVideo
-
-                onComplete={handleCompleteIntro}
-
-                videoSrc="/videoGleidson.mp4"
-
-            />
-
-        );
-
-    }
-
-    return <Home />;
-
+  return (
+    <ModalProvider>
+      <div className="relative min-h-screen w-full bg-black">
+        {!inSite ? (
+          <LandingProfile
+            onEnterSite={handleEnterSite}
+            onOpenAbout={handleOpenAbout}
+          />
+        ) : (
+          <Home />
+        )}
+      </div>
+    </ModalProvider>
+  );
 }
 
-
-export default App; 
+export default App;

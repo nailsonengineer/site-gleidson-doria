@@ -1,7 +1,6 @@
 import React from 'react';
 import { Header } from '../../components/Header/Header';
 import { Hero } from '../../components/Hero/Hero';
-import { PhotoGallery } from '../../components/PhotoGallery/PhotoGallery'; 
 import { Services } from '../../components/Services/Services';
 import { About } from '../../components/About/About';
 import { VideoGrid } from '../../components/VideoGrid/VideoGrid';
@@ -19,17 +18,17 @@ export const Home: React.FC = () => {
   return (
     <div className="min-h-screen bg-zinc-950 font-sans selection:bg-emerald-500 selection:text-zinc-950">
       <Header />
-      
+
       <div id="inicio">
         <Hero />
       </div>
 
-      <div id="galeria">
-        <PhotoGallery />
-      </div>
-
       <div id="servicos">
         <Services />
+      </div>
+
+      <div>
+        <Methodology />
       </div>
 
       <div id="sobre">
@@ -42,10 +41,6 @@ export const Home: React.FC = () => {
 
       <div id="resultados">
         <Results />
-      </div>
-
-      <div>
-        <Methodology />
       </div>
 
       <div>
@@ -69,7 +64,7 @@ export const Home: React.FC = () => {
       </div>
 
       <FloatingWhatsApp />
-      
+
       <Footer />
     </div>
   );
