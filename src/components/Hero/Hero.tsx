@@ -1,5 +1,6 @@
 import React from 'react';
 import { ArrowRight, ChevronDown } from 'lucide-react';
+import { HealthTipsModal } from '../HealthTipsModal/HealthTipsModal';
 
 // Sugestão: mobile ~900px de largura, desktop ~2200px, qualidade 75-80.
 const mobileBg = "https://pub-7baa56ad888f4ca9be47e9a301b4010f.r2.dev/assets/img/trabalhos/fotoentrada.jpeg";
@@ -318,6 +319,8 @@ export const Hero: React.FC = () => {
         <span className="text-[10px] uppercase tracking-[0.2em] text-zinc-400 font-medium">Role para explorar</span>
         <ChevronDown className="w-4 h-4 text-emerald-400 animate-bounce" />
       </div>
+
+      <HealthTipsModal />
 
     </section>
   );

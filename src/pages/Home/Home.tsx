@@ -11,7 +11,6 @@ import { Plans } from '../../components/Plans/Plans';
 import { FAQ } from '../../components/FAQ/FAQ';
 import { Ebook } from '../../components/Ebook/Ebook';
 import { Contact } from '../../components/Contact/Contact';
-import { FloatingWhatsApp } from '../../components/FloatingWhatsApp/FloatingWhatsApp';
 import { Footer } from '../../components/Footer/Footer';
 
 export const Home: React.FC = () => {
@@ -63,7 +62,6 @@ export const Home: React.FC = () => {
         <Contact />
       </div>
 
-      <FloatingWhatsApp />
 
       <Footer />
     </div>
