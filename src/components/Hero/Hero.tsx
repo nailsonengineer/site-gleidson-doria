@@ -1,10 +1,9 @@
 import React from 'react';
 import { ArrowRight, ChevronDown } from 'lucide-react';
 
-// Troque as extensões para .webp assim que converter as imagens.
 // Sugestão: mobile ~900px de largura, desktop ~2200px, qualidade 75-80.
-const mobileBg = "https://pub-d76a70826e904e309b25729e5e73488e.r2.dev/assets/img/perfil/WhatsApp%20Image%202026-10-15%20at%2022.53.58.jpeg";
-const desktopBg = "https://pub-d76a70826e904e309b25729e5e73488e.r2.dev/assets/img/perfil/elegante2.png";
+const mobileBg = "https://pub-7baa56ad888f4ca9be47e9a301b4010f.r2.dev/assets/img/trabalhos/fotoentrada.jpeg";
+const desktopBg = "https://pub-7baa56ad888f4ca9be47e9a301b4010f.r2.dev/assets/img/perfil/elegante2.png";
 
 // GIF transparente 1x1: evita baixar qualquer foto na faixa do tablet (640px a 1023px)
 const BLANK = "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7";

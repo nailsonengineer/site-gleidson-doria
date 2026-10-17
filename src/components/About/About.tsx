@@ -3,7 +3,7 @@ import { trainer } from '../../data/trainer';
 import { Award, ShieldCheck, ArrowRight, Activity, Quote, MapPin, BadgeCheck } from 'lucide-react';
 
 // Foto da seção (troque para .webp quando converter)
-const aboutImage = "https://pub-d76a70826e904e309b25729e5e73488e.r2.dev/assets/img/perfil/IMG_5697.PNG";
+const aboutImage = "https://pub-7baa56ad888f4ca9be47e9a301b4010f.r2.dev/assets/img/perfil/IMG_5697.PNG";
 
 // Pilares tirados do próprio texto da seção
 const pillars = [

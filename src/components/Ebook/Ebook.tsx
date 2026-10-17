@@ -47,7 +47,7 @@ export const Ebook: React.FC = () => {
       title: 'Prescrição de Treinamento para Emagrecimento',
       category: 'E-book Digital • Acesso Imediato',
       summary: 'Metodologia avançada e baseada em evidências científicas para otimizar a perda de gordura, controle de cargas e prescrição eficiente de exercícios.',
-      image: 'https://pub-d76a70826e904e309b25729e5e73488e.r2.dev/assets/img/livros/Profissional%20de%20Valor_%20Guia%20Pr%C3%A1tico.png',
+      image: 'https://pub-7baa56ad888f4ca9be47e9a301b4010f.r2.dev/assets/img/livros/Profissional%20de%20Valor_%20Guia%20Pr%C3%A1tico.png',
       price: 39.90,
       hotmartLink: 'https://profissionaldevalor10.hotmart.host/prescricao-de-exercicio-para-o-emagrecimento-72968942-e4e8-4cd1-863c-8f79e07b46aa',
       badge: 'Foco em Emagrecimento'
@@ -56,7 +56,7 @@ export const Ebook: React.FC = () => {
       title: 'Seja um Personal Trainer de Valor',
       category: 'E-book Digital • Acesso Imediato',
       summary: 'Guia definitivo para profissionais que buscam autoridade, alta retenção de alunos, posicionamento de mercado e faturamento escalável na educação física.',
-      image: 'https://pub-d76a70826e904e309b25729e5e73488e.r2.dev/assets/img/livros/ebook.png',
+      image: 'https://pub-7baa56ad888f4ca9be47e9a301b4010f.r2.dev/assets/img/livros/ebook.png',
       price: 29.90,
       hotmartLink: 'https://gleidsondoria88.hotmart.host/seja-um-personal-trainer-de-valor-f82583c2-905f-4b8b-aeab-fafaaeb479d8',
       badge: 'Carreira & Autoridade'
@@ -67,7 +67,7 @@ export const Ebook: React.FC = () => {
     title: 'Musculação: O Caos Perfeito',
     category: 'Livro Físico Especializado',
     summary: 'Convida o leitor a ampliar seu olhar sobre a musculação e a importância de um trabalho conduzido com conhecimento, critério e propósito. Uma leitura para profissionais, estudantes e apaixonados que desejam refletir sobre a prática e os pilares para a construção de resultados.',
-    image: 'https://pub-d76a70826e904e309b25729e5e73488e.r2.dev/assets/img/livros/Muscula%C3%A7%C3%A3o_%20O%20Caos%20Perfeito.png',
+    image: 'https://pub-7baa56ad888f4ca9be47e9a301b4010f.r2.dev/assets/img/livros/Muscula%C3%A7%C3%A3o_%20O%20Caos%20Perfeito.png',
     price: 79.90,
     stock: 12,
     hotmartLink: 'https://profissionaldevalor10.hotmart.host/musculacao-o-caos-perfeito-900fd965-c0eb-497c-b278-2d0c1b364dd7'

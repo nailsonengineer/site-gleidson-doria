@@ -9,16 +9,16 @@ interface VideoItem {
 }
 
 const demoVideos: VideoItem[] = [
-  { id: 1, url: 'https://pub-d76a70826e904e309b25729e5e73488e.r2.dev/videos/video12.mp4', title: 'A Arte de Atender', subtitle: 'Conexão e empatia profissional' }, 
-  { id: 2, url: 'https://pub-d76a70826e904e309b25729e5e73488e.r2.dev/videos/WhatsApp%20Video%202026-10-15%20at%2021.12.04.mp4', title: 'Superando Limites', subtitle: 'Intensidade máxima e foco na execução' },
-  { id: 3, url: 'https://pub-d76a70826e904e309b25729e5e73488e.r2.dev/videos/video14.mp4', title: 'Estabilidade e Core', subtitle: 'Força e controle para evolução no agachamento' },
-  { id: 4, url: 'https://pub-d76a70826e904e309b25729e5e73488e.r2.dev/videos/video17.mp4', title: 'Essência da Profissão', subtitle: 'Reflexão, propósito e valor humano' },
-  { id: 5, url: 'https://pub-d76a70826e904e309b25729e5e73488e.r2.dev/videos/video18.mp4', title: 'Prática de Atendimento', subtitle: 'Abordagem em tempo real e excelência profissional' },
-  { id: 6, url: 'https://pub-d76a70826e904e309b25729e5e73488e.r2.dev/videos/video19.mp4', title: 'Rotina e Performance', subtitle: 'Treino completo e corrida na orla' },
-  { id: 7, url: 'https://pub-d76a70826e904e309b25729e5e73488e.r2.dev/videos/video20.mp4', title: 'Reabilitação do LCA', subtitle: 'Pós-cirúrgico funcional e ganho de amplitude' },
-  { id: 8, url: 'https://pub-d76a70826e904e309b25729e5e73488e.r2.dev/videos/video21.mp4', title: 'Bastidores de Palestra', subtitle: 'Jornada, imersão e compromisso profissional' },
-  { id: 9, url: 'https://pub-d76a70826e904e309b25729e5e73488e.r2.dev/videos/video15.mp4', title: 'Propósito e Legado', subtitle: 'A arte de atender e transformar vidas' },
-  { id: 10, url: 'https://pub-d76a70826e904e309b25729e5e73488e.r2.dev/videos/video16.mp4', title: 'Mentalidade e Atitude', subtitle: 'Bastidores e imersão profissional' },
+  { id: 1, url: 'https://pub-7baa56ad888f4ca9be47e9a301b4010f.r2.dev/videos/video12.mp4', title: 'A Arte de Atender', subtitle: 'Conexão e empatia profissional' }, 
+  { id: 2, url: 'https://pub-7baa56ad888f4ca9be47e9a301b4010f.r2.dev/videos/video13.mp4', title: 'Superando Limites', subtitle: 'Intensidade máxima e foco na execução' },
+  { id: 3, url: 'https://pub-7baa56ad888f4ca9be47e9a301b4010f.r2.dev/videos/video14.mp4', title: 'Treinos dinâmicos e eficiente', subtitle: 'Priorizando a sua epecificidade e individualidade biológica' },
+  { id: 4, url: 'https://pub-7baa56ad888f4ca9be47e9a301b4010f.r2.dev/videos/video17.mp4', title: 'Essência da Profissão', subtitle: 'Reflexão, propósito e valor humano' },
+  { id: 5, url: 'https://pub-7baa56ad888f4ca9be47e9a301b4010f.r2.dev/videos/video18.mp4', title: 'Prática de Atendimento', subtitle: 'Abordagem em tempo real e excelência profissional' },
+  { id: 6, url: 'https://pub-7baa56ad888f4ca9be47e9a301b4010f.r2.dev/videos/video19.mp4', title: 'Rotina e Performance', subtitle: 'Treino completo e corrida na orla' },
+  { id: 7, url: 'https://pub-7baa56ad888f4ca9be47e9a301b4010f.r2.dev/videos/video20.mp4', title: 'Reabilitação do LCA', subtitle: 'Pós-cirúrgico funcional e ganho de amplitude' },
+  { id: 8, url: 'https://pub-7baa56ad888f4ca9be47e9a301b4010f.r2.dev/videos/video21.mp4', title: 'Bastidores de Palestra', subtitle: 'Jornada, imersão e compromisso profissional' },
+  { id: 9, url: 'https://pub-7baa56ad888f4ca9be47e9a301b4010f.r2.dev/videos/video15.mp4', title: 'Propósito e Legado', subtitle: 'A arte de atender e transformar vidas' },
+  { id: 10, url: 'https://pub-7baa56ad888f4ca9be47e9a301b4010f.r2.dev/videos/video16.mp4', title: 'Mentalidade e Atitude', subtitle: 'Bastidores e imersão profissional' },
 ];
 
 export const VideoGrid: React.FC = () => {

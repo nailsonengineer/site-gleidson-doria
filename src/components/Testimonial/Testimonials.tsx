@@ -23,7 +23,7 @@ const testimonialsData: Testimonial[] = [
     age: 43,
     highlight: "13 anos de parceria",
     comment: "Com o Gleidson são 13 anos de uma história que vai muito além dos treinos. Vivemos gestação, cirurgias e muitas superações. Você se tornou muito mais que meu personal: é amigo, conselheiro e incentivador. Sou muito grata por nunca deixar de acreditar em mim!",
-    avatar: "https://pub-d76a70826e904e309b25729e5e73488e.r2.dev/assets/img/clientes/tatiane-santos.jpeg",
+    avatar: "https://pub-7baa56ad888f4ca9be47e9a301b4010f.r2.dev/assets/img/clientes/tatiane-santos.jpeg",
     rating: 5,
     objectPosition: "object-top"
   },
@@ -33,7 +33,7 @@ const testimonialsData: Testimonial[] = [
     age: 32,
     highlight: "+10 anos de treino",
     comment: "Treino com o Gleidson há mais de 10 anos (hoje na consultoria online). Seu atendimento se diferencia pela atenção técnica, baseada na ciência e adaptada às necessidades de cada um. Minha confiança é tanta que ele hoje atende minha mãe e meu irmão!",
-    avatar: "https://pub-d76a70826e904e309b25729e5e73488e.r2.dev/assets/img/clientes/igor-leite.png",
+    avatar: "https://pub-7baa56ad888f4ca9be47e9a301b4010f.r2.dev/assets/img/clientes/igor-leite.png",
     rating: 5,
     objectPosition: "object-top"
   },
@@ -42,7 +42,7 @@ const testimonialsData: Testimonial[] = [
     modality: "Presencial",
     age: 38,
     comment: "Permanecer anos com um profissional fala sobre confiança e conexão. Além de muito competente e dedicado, ele tem um olhar atento que respeita nossos limites. O treino se tornou um momento leve, agradável, de boas conversas e amizade.",
-    avatar: "https://pub-d76a70826e904e309b25729e5e73488e.r2.dev/assets/img/clientes/vanessa-nichetti.jpeg",
+    avatar: "https://pub-7baa56ad888f4ca9be47e9a301b4010f.r2.dev/assets/img/clientes/vanessa-nichetti.jpeg",
     rating: 5,
     objectPosition: "object-[center_25%]"
   },
@@ -52,7 +52,7 @@ const testimonialsData: Testimonial[] = [
     age: 43,
     highlight: "Resultado em 60 dias",
     comment: "A consultoria é realmente diferenciada! O cuidado e a atenção à execução fazem toda a diferença. O processo é constante e, em apenas 60 dias, meu corpo já está muito mais bonito e torneado. Estou satisfeitíssima!",
-    avatar: "https://pub-d76a70826e904e309b25729e5e73488e.r2.dev/assets/img/clientes/larissa-dorea.jpeg",
+    avatar: "https://pub-7baa56ad888f4ca9be47e9a301b4010f.r2.dev/assets/img/clientes/larissa-dorea.jpeg",
     rating: 5,
     objectPosition: "object-top"
   },
@@ -62,7 +62,7 @@ const testimonialsData: Testimonial[] = [
     age: 53,
     highlight: "5 anos com a família",
     comment: "Há 5 anos o Gleidson conquistou nossa família! O que admiro nele vai muito além do treino: é a capacidade de enxergar cada pessoa de forma única, transformando tudo em saúde e evolução. Você não treina apenas corpos, transforma vidas. Que sorte a nossa!",
-    avatar: "https://pub-d76a70826e904e309b25729e5e73488e.r2.dev/assets/img/clientes/liliane-bamberg.jpeg",
+    avatar: "https://pub-7baa56ad888f4ca9be47e9a301b4010f.r2.dev/assets/img/clientes/liliane-bamberg.jpeg",
     rating: 5,
     objectPosition: "object-[center_25%]"
   },
@@ -71,7 +71,7 @@ const testimonialsData: Testimonial[] = [
     modality: "On-line",
     age: 37,
     comment: "Entrar na consultoria foi a melhor escolha que poderia fazer. O diferencial é o acompanhamento humano: tem cuidado, atenção e cobrança na medida certa. Não é só treino, é um suporte que me faz mais forte, confiante e com o corpo evoluindo. Gratidão!",
-    avatar: "https://pub-d76a70826e904e309b25729e5e73488e.r2.dev/assets/img/clientes/cinde-moane.PNG",
+    avatar: "https://pub-7baa56ad888f4ca9be47e9a301b4010f.r2.dev/assets/img/clientes/cinde-moane.PNG",
     rating: 5,
     objectPosition: "object-center"
   }

@@ -21,7 +21,7 @@ interface LandingProfileProps {
 }
 
 const PROFILE_IMG =
-  'https://pub-d76a70826e904e309b25729e5e73488e.r2.dev/assets/img/perfil/elegante3.png';
+  'https://pub-d76a70826e904e309b25729e5e73488e.r2.dev/assets/img/perfil/IMG_7274.JPG.jpeg';
 const TRAINER_FIRST_NAME = 'Gleidson';
 const TRAINER_LAST_NAME = 'Doria';
 
@@ -263,7 +263,7 @@ const LinkCard: React.FC<LinkCardProps> = ({ onClick, icon, title, subtitle, pri
 export const LandingProfile: React.FC<LandingProfileProps> = ({
   onEnterSite,
   onOpenAbout,
-  videoSrc = 'https://pub-d76a70826e904e309b25729e5e73488e.r2.dev/videos/gleidsonapresentacao.mp4',
+  videoSrc = 'https://pub-7baa56ad888f4ca9be47e9a301b4010f.r2.dev/videos/gleidsonapresentacao.mp4',
 }) => {
   const [isVideoModalOpen, setIsVideoModalOpen] = useState(false);
   const [isPlaying, setIsPlaying] = useState(false);
@@ -521,7 +521,7 @@ export const LandingProfile: React.FC<LandingProfileProps> = ({
                     alt={`${TRAINER_FIRST_NAME} ${TRAINER_LAST_NAME}`}
                     decoding="async"
                     onError={() => setImgFailed(true)}
-                    className="h-full w-full scale-150 rounded-full object-cover object-[85%_25%] contrast-110 brightness-125 grayscale"
+                    className="h-full w-full rounded-full object-cover object-top contrast-110 brightness-90 grayscale"
                   />
                 )}
               </div>
@@ -538,16 +538,13 @@ export const LandingProfile: React.FC<LandingProfileProps> = ({
 
           {/* ---------- TEXTO + LINKS ---------- */}
           <section className="mx-auto flex w-full max-w-md flex-col items-center text-center md:max-w-lg lg:mx-0 lg:max-w-xl lg:items-start lg:text-left">
-            <header>
+            <header className="flex w-full flex-col items-center lg:items-start">
               <h1
-                className="lp-in text-4xl font-extrabold leading-[0.95] tracking-tight sm:text-5xl lg:text-6xl xl:text-7xl"
+                className="lp-in whitespace-nowrap text-[1.9rem] font-extrabold leading-none tracking-tight min-[400px]:text-4xl sm:text-5xl xl:text-6xl"
                 style={{ ['--d' as string]: '120ms' }}
               >
-                <span className="block bg-gradient-to-b from-white to-zinc-300 bg-clip-text text-transparent">
-                  {TRAINER_FIRST_NAME}
-                </span>
-                <span className="block bg-gradient-to-b from-white to-zinc-300 bg-clip-text text-transparent">
-                  {TRAINER_LAST_NAME}
+                <span className="bg-gradient-to-b from-white to-zinc-300 bg-clip-text text-transparent">
+                  {TRAINER_FIRST_NAME} {TRAINER_LAST_NAME}
                 </span>
               </h1>
 
@@ -600,20 +597,18 @@ export const LandingProfile: React.FC<LandingProfileProps> = ({
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="Instagram"
-                className="group flex h-12 items-center gap-2.5 rounded-2xl border border-white/10 bg-white/[0.04] px-4 text-sm font-semibold text-zinc-200 backdrop-blur-md transition-all hover:border-emerald-400/50 hover:bg-white/[0.08] hover:text-emerald-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-300 focus-visible:ring-offset-2 focus-visible:ring-offset-[#07090a]"
+                className="group flex h-12 w-12 items-center justify-center rounded-2xl border border-white/10 bg-white/[0.04] text-zinc-200 backdrop-blur-md transition-all hover:border-emerald-400/50 hover:bg-white/[0.08] hover:text-emerald-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-300 focus-visible:ring-offset-2 focus-visible:ring-offset-[#07090a] sm:h-14 sm:w-14"
               >
-                <InstagramIcon className="h-5 w-5 transition-transform group-hover:scale-110" />
-                Instagram
+                <InstagramIcon className="h-6 w-6 transition-transform group-hover:scale-110" />
               </a>
               <a
                 href={trainer.whatsapp}
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="WhatsApp"
-                className="group flex h-12 items-center gap-2.5 rounded-2xl border border-white/10 bg-white/[0.04] px-4 text-sm font-semibold text-zinc-200 backdrop-blur-md transition-all hover:border-emerald-400/50 hover:bg-white/[0.08] hover:text-emerald-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-300 focus-visible:ring-offset-2 focus-visible:ring-offset-[#07090a]"
+                className="group flex h-12 w-12 items-center justify-center rounded-2xl border border-white/10 bg-white/[0.04] text-zinc-200 backdrop-blur-md transition-all hover:border-emerald-400/50 hover:bg-white/[0.08] hover:text-emerald-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-300 focus-visible:ring-offset-2 focus-visible:ring-offset-[#07090a] sm:h-14 sm:w-14"
               >
-                <WhatsAppIcon className="h-5 w-5 transition-transform group-hover:scale-110" />
-                WhatsApp
+                <WhatsAppIcon className="h-6 w-6 transition-transform group-hover:scale-110" />
               </a>
             </div>
           </section>
